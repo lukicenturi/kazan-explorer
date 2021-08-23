@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kazan Explorer</title>
+    <link rel="stylesheet" href="css/fa.css">
+    <link rel="stylesheet" href="css/froala/froala_editor.css">
+    <link rel="stylesheet" href="css/froala/froala_style.css">
+    <link rel="stylesheet" href="css/froala/plugins/code_view.css">
+    <link rel="stylesheet" href="css/froala/plugins/draggable.css">
+    <link rel="stylesheet" href="css/froala/plugins/colors.css">
+    <link rel="stylesheet" href="css/froala/plugins/emoticons.css">
+    <link rel="stylesheet" href="css/froala/plugins/image_manager.css">
+    <link rel="stylesheet" href="css/froala/plugins/image.css">
+    <link rel="stylesheet" href="css/froala/plugins/line_breaker.css">
+    <link rel="stylesheet" href="css/froala/plugins/table.css">
+    <link rel="stylesheet" href="css/froala/plugins/char_counter.css">
+    <link rel="stylesheet" href="css/froala/plugins/video.css">
+    <link rel="stylesheet" href="css/froala/plugins/fullscreen.css">
+    <link rel="stylesheet" href="css/froala/plugins/file.css">
+    <link rel="stylesheet" href="css/froala/plugins/quick_insert.css">
+    <link rel="stylesheet" href="css/froala/plugins/help.css">
+    <link rel="stylesheet" href="css/froala/third_party/spell_checker.css">
+    <link rel="stylesheet" href="css/froala/plugins/special_characters.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body role="document" data-mode="editor">
+<div id="wrapper-editor">
+    <svg id="svg"></svg>
+    <button role="button" class="action fa fa-pencil" id="edit"></button>
+    <button role="button" class="action fa fa-trash" id="delete"></button>
+</div>
+<div id="wrapper-view">
+    <aside>
+        <svg id="map" width="500" height="300">
+            <g class="wrapper">
+                <!--<circle r="40"></circle>-->
+            </g>
+        </svg>
+        <div class="control">
+            <div>
+                <button role="button" class="btn btn-black" data-part="0"></button>
+            </div>
+            <div>
+                <button role="button" class="btn btn-black" data-part="3"></button>
+                <button role="button" class="btn btn-black" data-part="1"></button>
+            </div>
+            <div>
+                <button role="button" class="btn btn-black" data-part="2"></button>
+            </div>
+        </div>
+    </aside>
+    <main class="fr-view">
+
+    </main>
+</div>
+
+<div class="shortcuts">
+    <div class="title">
+        How To Use:
+    </div>
+    <div>
+        <div>
+            (DEL / BACKSPACE)
+        </div>
+        <div>
+            Delete Line
+        </div>
+    </div>
+
+    <div>
+        <div>
+            (HOVER ELEMENT)
+        </div>
+        <div>
+            Open Element Interactions
+        </div>
+    </div>
+
+    <div>
+        <div>
+            (DRAG ELEMENT)
+        </div>
+        <div>
+            Move Element
+        </div>
+    </div>
+
+    <div>
+        <div>
+            (SHIFT + DRAG INTERACTION)
+        </div>
+        <div>
+            Link To Another Interactions
+        </div>
+    </div>
+
+    <div>
+        <div>
+            (HOVER ELEMENT + CLICK "R")
+        </div>
+        <div>
+            Set as root element
+        </div>
+    </div>
+</div>
+
+<div class="buttons">
+    <button role="button" class="btn btn-red" id="reset">Reset</button>
+    <button role="button" class="btn btn-black" id="mode" aria-pressed="true">Go To View Mode</button>
+</div>
+
+<div id="editor" aria-modal="true">
+    <div class="container">
+        <div class="header">
+            <button role="button" id="close" aria-label="Close" class="btn btn-red btn-small fa fa-times"></button>
+        </div>
+        <div id="content"></div>
+        <div class="captions">
+            <div>
+                <input type="text" data-part="0" placeholder="Caption for relation 1" tabindex="2">
+            </div>
+            <div>
+                <input type="text" data-part="3" placeholder="Caption for relation 4" tabindex="5">
+                <input type="text" data-part="1" placeholder="Caption for relation 2" tabindex="3">
+            </div>
+            <div>
+                <input type="text" data-part="2" placeholder="Caption for relation 3" tabindex="4">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery.js"></script>
+<script src="js/froala/froala_editor.min.js" ></script>
+<script src="js/froala/plugins/align.min.js"></script>
+<script src="js/froala/plugins/char_counter.min.js"></script>
+<script src="js/froala/plugins/code_beautifier.min.js"></script>
+<script src="js/froala/plugins/code_view.min.js"></script>
+<script src="js/froala/plugins/colors.min.js"></script>
+<script src="js/froala/plugins/draggable.min.js"></script>
+<script src="js/froala/plugins/emoticons.min.js"></script>
+<script src="js/froala/plugins/entities.min.js"></script>
+<script src="js/froala/plugins/file.min.js"></script>
+<script src="js/froala/plugins/font_size.min.js"></script>
+<script src="js/froala/plugins/font_family.min.js"></script>
+<script src="js/froala/plugins/fullscreen.min.js"></script>
+<script src="js/froala/plugins/image.min.js"></script>
+<script src="js/froala/plugins/image_manager.min.js"></script>
+<script src="js/froala/plugins/line_breaker.min.js"></script>
+<script src="js/froala/plugins/inline_style.min.js"></script>
+<script src="js/froala/plugins/link.min.js"></script>
+<script src="js/froala/plugins/lists.min.js"></script>
+<script src="js/froala/plugins/paragraph_format.min.js"></script>
+<script src="js/froala/plugins/paragraph_style.min.js"></script>
+<script src="js/froala/plugins/quick_insert.min.js"></script>
+<script src="js/froala/plugins/quote.min.js"></script>
+<script src="js/froala/plugins/table.min.js"></script>
+<script src="js/froala/plugins/save.min.js"></script>
+<script src="js/froala/plugins/url.min.js"></script>
+<script src="js/froala/plugins/video.min.js"></script>
+<script src="js/froala/plugins/help.min.js"></script>
+<script src="js/froala/plugins/print.min.js"></script>
+<script src="js/froala/third_party/spell_checker.min.js"></script>
+<script src="js/froala/plugins/special_characters.min.js"></script>
+<script src="js/froala/plugins/word_paste.min.js"></script>
+
+<script src="js/Slide.js"></script>
+<script src="js/Line.js"></script>
+<script src="js/Main.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
